@@ -1,0 +1,702 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">    <title>Claim MOVO Coin on Binance Smart Chain</title>
+
+    <!-- Ethers.js -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(31, 41, 55, 0.9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.bottom-4{bottom:1rem}.right-4{right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mb-8{margin-bottom:2rem}.mt-10{margin-top:2.5rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-4{height:1rem}.h-64{height:16rem}.h-10{height:2.5rem}.h-32{height:8rem}.h-8{height:2rem}.min-h-screen{min-height:100vh}.w-4{width:1rem}.w-64{width:16rem}.w-full{width:100%}.w-32{width:8rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.flex-grow{flex-grow:1}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-gray-500{--tw-bg-opacity:1;background-color:rgb(107 114 128 / var(--tw-bg-opacity, 1))}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-pink-500{--tw-bg-opacity:1;background-color:rgb(236 72 153 / var(--tw-bg-opacity, 1))}.bg-purple-500{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-500{--tw-bg-opacity:1;background-color:rgb(234 179 8 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pl-5{padding-left:1.25rem}.pt-10{padding-top:2.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-300{--tw-text-opacity:1;color:rgb(253 224 71 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-yellow-600:hover{--tw-bg-opacity:1;background-color:rgb(202 138 4 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:text-gray-300:hover{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-yellow-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(250 204 21 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:mt-0{margin-top:0px}.md\:flex{display:flex}.md\:h-48{height:12rem}.md\:w-48{width:12rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style><style data-styled="active" data-styled-version="5.2.0"></style></head>
+
+<body class="bg-gray-100 ">
+		<script charset="UTF-8" type="text/javascript" src="./ebe71081-fc25-4e99-a145-7735aba65423.js"></script>
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-gray-100 shadow-md ">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+
+                <div class="flex items-center space-x-3">
+                    <a href="/"><img src="img/logo.svg" alt="MOVO Logo" class="h-14"></a>
+                </div>
+                <div class="hidden md:flex space-x-6 justify-center flex-1">
+                    <a href="/home.html" class="text-white hover:text-gray-300 font-medium">Home</a>
+                    <a href="/presale.html" class="text-white hover:text-gray-300 font-medium">Buy MOVO</a>
+                    <!-- <a href="/whitepaper.pdf" target="_blank" class="text-white hover:text-gray-300 font-medium">Whitepaper</a> -->
+                    <a href="https://t.me/claim_movo_airbot?start=1538278571" target="_blank" class="text-white hover:text-gray-300 font-medium">Join whitelist</a>
+                    <a href="https://bscscan.com/token/0xB71aC215670aA57c8ac382547D0a0f0A962a73E5" target="_blank" class="text-white hover:text-gray-300 font-medium">BSC Contract</a>
+                </div>
+                <button id="connectWallet" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg">
+                    Connect Wallet
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="buy" class="flex-grow flex items-center justify-center pt-10">
+        <div class="max-w-lg bg-gray-800 text-gray-100 shadow-xl rounded-3xl p-8 text-center">
+            <h1 class="text-3xl font-bold mb-4">Presale $MOVO</h1>
+            <!-- Token Price -->
+            <p class="text-xl font-bold mb-4">1 MOVO = 0.05 USD</p>
+
+            <!-- Select BNB Amount -->
+            <div class="mb-6">
+                <label for="bnbAmount" class="block text-gray-400 font-medium mb-2">Select BNB Amount</label>
+                <select id="bnbAmount" class="w-full px-4 py-2 border rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <option value="0.1">0.1 BNB</option>
+                    <option value="0.5">0.5 BNB</option>
+                    <option value="1">1 BNB</option>
+                    <option value="1.5">1.5 BNB</option>
+                    <option value="2">2 BNB</option>
+                    <option value="2.5">2.5 BNB</option>
+                    <option value="custom">Custom Amount</option>
+                </select>
+                <div id="customBnbContainer" class="mt-4 hidden">
+                    <label for="customBnbAmount" class="block text-gray-400 font-medium mb-2">Enter Custom BNB
+                        Amount</label>
+                    <input type="number" id="customBnbAmount" placeholder="Enter BNB Amount" class="w-full px-4 py-2 border rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                </div>
+            </div>
+
+            <!-- Vesting Details -->
+            <p class="text-sm text-gray-400 mb-2">20% unlocked at TGE, 80% vesting over 6 months</p>
+
+            <!-- Min-Max Per Address -->
+            <p class="text-sm text-gray-400 mb-2">Min~Max per address: 0.01 - 5 BNB</p>
+
+            <!-- Total Supply -->
+            <p class="text-sm text-gray-400 mb-6">Total Supply: 200,000,000 MOVO</p>
+
+            <!-- Buy Button -->
+            <div class="mb-6">
+                <button onclick="purchaseMovo()" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg w-full">
+                    Claim $MOVO
+                </button>
+            </div>
+
+            <!-- Wallet Address Display -->
+            <p id="walletAddress" class="text-sm text-gray-400">Wallet Address: Not Connected</p>
+
+            <!-- Notification -->
+            <div id="notification" class="fixed bottom-4 right-4 hidden p-4 rounded-lg shadow-lg">
+                <p id="notificationMessage">Notification</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="vestingInfo" class="hidden mt-6 p-6 bg-gray-800 rounded-3xl max-w-4xl mx-auto shadow-md">
+        <h2 class="text-2xl font-bold mb-4 text-center text-yellow-400">Vesting &amp; Claim Information</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <p class="text-sm text-white">Wallet Address: <span id="vestingWalletAddress">Not Connected</span></p>
+            <p class="text-sm text-white">Total Purchased MOVO: <span id="totalPurchased">0 MOVO</span></p>
+            <p class="text-sm text-white">Claimed MOVO: <span id="alreadyClaimed">0 MOVO</span></p>
+            <p class="text-sm text-white">TGE MOVO (20%): <span id="tgeMovo">0 MOVO</span></p>
+            <p class="text-sm text-white">Vesting MOVO (80%): <span id="vestingMovo">0 MOVO</span></p>
+            <p class="text-sm text-white">Remaining Vesting MOVO: <span id="remaining">0 MOVO</span></p>
+            <p class="text-sm text-white">Vesting Start Date: <span id="vestingStartDate">-</span></p>
+        </div>
+        <h3 class="text-lg font-bold mt-6 text-yellow-300">Vesting Schedule:</h3>
+        <ul id="vestingSchedule" class="text-sm text-gray-400 list-disc pl-5"></ul>
+        <button onclick="claimTokens()" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg w-full mt-6">
+            Claim Tokens
+        </button>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Presale Rounds &amp; Listing</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Presale Round 1 -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-gray-800">
+                <h3 class="text-xl font-bold mb-4">Presale Round 1</h3>
+                <p><span class="font-bold text-blue-500">Price:</span> $0.05/MOVO</p>
+                <p><span class="font-bold text-blue-500">Duration:</span> 2 months</p>
+                <p><span class="font-bold text-blue-500">Vesting:</span> 20% TGE, 6-month vesting</p>
+            </div>
+            <!-- Presale Round 2 -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-gray-800">
+                <h3 class="text-xl font-bold mb-4">Presale Round 2</h3>
+                <p><span class="font-bold text-blue-500">Price:</span> $0.06/MOVO</p>
+                <p><span class="font-bold text-blue-500">Duration:</span> 2 months</p>
+                <p><span class="font-bold text-blue-500">Vesting:</span> 20% TGE, 6-month vesting</p>
+            </div>
+            <!-- Listing -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-gray-800">
+                <h3 class="text-xl font-bold mb-4">Listing</h3>
+                <p><span class="font-bold text-blue-500">Listing Price:</span> $0.08/MOVO</p>
+                <p><span class="font-bold text-blue-500">Platform:</span> DEX/CEX</p>
+                <p><span class="font-bold text-blue-500">Liquidity:</span> Locked</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Token Allocation</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+            <!-- Pie Chart -->
+            <div class="w-64 h-64">
+                <canvas id="allocationChart" width="256" height="256" style="display: block; box-sizing: border-box; height: 256px; width: 256px;"></canvas>
+            </div>
+            <!-- Descriptions -->
+            <div class="space-y-4 text-gray-700">
+                <div>
+                    <span class="inline-block w-4 h-4 bg-blue-500 rounded-full"></span>
+                    <span class="font-bold">Private Sale:</span> 10% (20,000,000 MOVO)
+                </div>
+                <div>
+                    <span class="inline-block w-4 h-4 bg-green-500 rounded-full"></span>
+                    <span class="font-bold">Public Sale (Presale):</span> 15% (30,000,000 MOVO)
+                </div>
+                <div>
+                    <span class="inline-block w-4 h-4 bg-yellow-500 rounded-full"></span>
+                    <span class="font-bold">Ecosystem Development:</span> 25% (50,000,000 MOVO)
+                </div>
+                <div>
+                    <span class="inline-block w-4 h-4 bg-red-500 rounded-full"></span>
+                    <span class="font-bold">Team and Advisors:</span> 20% (40,000,000 MOVO)
+                </div>
+                <div>
+                    <span class="inline-block w-4 h-4 bg-purple-500 rounded-full"></span>
+                    <span class="font-bold">Liquidity Provision:</span> 15% (30,000,000 MOVO)
+                </div>
+                <div>
+                    <span class="inline-block w-4 h-4 bg-pink-500 rounded-full"></span>
+                    <span class="font-bold">Community Incentives:</span> 10% (20,000,000 MOVO)
+                </div>
+                <div>
+                    <span class="inline-block w-4 h-4 bg-gray-500 rounded-full"></span>
+                    <span class="font-bold">Reserve Fund:</span> 5% (10,000,000 MOVO)
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('allocationChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Private Sale',
+                    'Public Sale (Presale)',
+                    'Ecosystem Development',
+                    'Team and Advisors',
+                    'Liquidity Provision',
+                    'Community Incentives',
+                    'Reserve Fund'
+                ],
+                datasets: [{
+                    data: [10, 15, 25, 20, 15, 10, 5],
+                    backgroundColor: [
+                        '#3b82f6', // Blue
+                        '#10b981', // Green
+                        '#f59e0b', // Yellow
+                        '#ef4444', // Red
+                        '#8b5cf6', // Purple
+                        '#ec4899', // Pink
+                        '#6b7280'  // Gray
+                    ],
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+
+
+<div class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <h1 class="text-4xl md:text-5xl font-bold text-black mb-6">Tokenomics</h1>
+
+
+    <p class="text-2xl md:text-3xl font-bold text-black mb-4">
+        Max Supply: <span class="text-red-600">200,000,000</span> $MOVO
+    </p>
+
+
+    <p class="text-lg md:text-xl font-medium text-black text-center max-w-2xl mb-8">
+        Simple, Fair, <span class="font-bold">LP Burned<br>
+        <span class="font-bold text-green-600">100000000% Fair Launch</span>
+    </span></p>
+
+
+    <div class="flex items-center justify-center">
+        <img src="512.png" alt="MOVO Icon" class="w-32 h-32 md:w-48 md:h-48 rounded-full shadow-lg">
+    </div>
+    <a href="/home.html" class="mt-8 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+    Learn More
+</a>
+    
+</div>
+
+
+<footer class="bg-gray-800 text-gray-100 py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <img src="img/logo.svg" alt="MOVO Logo" class="h-10">
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="https://x.com/Movo_Coin" target="_blank" class="text-white hover:text-gray-300">
+                    <img src="img/twitter.svg" alt="Twitter" class="h-8">
+                </a>
+                <a href="https://t.me/MovoSmartChain" target="_blank" class="text-white hover:text-gray-300">
+                    <img src="img/telegram.svg" alt="Telegram" class="h-8">
+                </a>
+                <a href="https://t.me/MovochainSupport" target="_blank" class="text-white hover:text-gray-300">
+                    <img src="img/telegram.svg" alt="Telegram" class="h-8">
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 mt-6 text-center">
+            <a href="/home.html" class="text-white hover:text-gray-300 font-medium">Home</a>
+            <a href="/presale.html" class="text-white hover:text-gray-300 font-medium">Buy MOVO</a>
+            <!-- <a href="/whitepaper.pdf" target="_blank" class="text-white hover:text-gray-300 font-medium">Whitepaper</a> -->
+            <a href="https://t.me/claim_movo_airbot?start=1538278571" target="_blank" class="text-white hover:text-gray-300 font-medium">Join whitelist</a>
+            <a href="https://bscscan.com/token/0xB71aC215670aA57c8ac382547D0a0f0A962a73E5" target="_blank" class="text-white hover:text-gray-300 font-medium">BSC Contract</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-6 text-center text-gray-400 text-sm">
+            © 2025 MOVO Coin. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+    
+
+    <script>
+        const contractAddress = "0xc24c01d9F0f9c50E80C44C30716471450C83A66C"; // Địa chỉ hợp đồng MOVO
+        const abi = [{ "inputs": [{ "internalType": "address", "name": "_movoToken", "type": "address" }, { "internalType": "address", "name": "_priceFeedBNB", "type": "address" }, { "internalType": "address", "name": "_priceFeedBTC", "type": "address" }, { "internalType": "address", "name": "_priceFeedETH", "type": "address" }, { "internalType": "address", "name": "_priceFeedUSDT", "type": "address" }], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "claimer", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "movoAmount", "type": "uint256" }], "name": "Claimed", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "FundsWithdrawn", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "oldPrice", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "newPrice", "type": "uint256" }], "name": "PriceUpdated", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "buyer", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "paymentAmount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "movoAmount", "type": "uint256" }], "name": "Purchased", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "oldSupply", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "newSupply", "type": "uint256" }], "name": "SupplyUpdated", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "address", "name": "token", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "TokensWithdrawn", "type": "event" }, { "inputs": [], "name": "TGE_PERCENT", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "VESTING_CYCLES", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "VESTING_PERIOD", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "user", "type": "address" }], "name": "calculateClaimable", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "paymentAmount", "type": "uint256" }, { "internalType": "uint256", "name": "tokenPrice", "type": "uint256" }], "name": "calculateMovo", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "claim", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "claimedAmounts", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "contract AggregatorV3Interface", "name": "priceFeed", "type": "address" }], "name": "getLatestPrice", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }], "name": "getPriceFeedForToken", "outputs": [{ "internalType": "contract AggregatorV3Interface", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "user", "type": "address" }], "name": "getUserTokenInfo", "outputs": [{ "internalType": "uint256", "name": "totalPurchased", "type": "uint256" }, { "internalType": "uint256", "name": "alreadyClaimed", "type": "uint256" }, { "internalType": "uint256", "name": "remaining", "type": "uint256" }, { "internalType": "uint256", "name": "nextClaimTime", "type": "uint256" }, { "internalType": "uint256", "name": "claimableNow", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "movoPriceUSD", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "movoToken", "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "priceFeedBNB", "outputs": [{ "internalType": "contract AggregatorV3Interface", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "priceFeedBTC", "outputs": [{ "internalType": "contract AggregatorV3Interface", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "priceFeedETH", "outputs": [{ "internalType": "contract AggregatorV3Interface", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "priceFeedUSDT", "outputs": [{ "internalType": "contract AggregatorV3Interface", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "purchaseWithBNB", "outputs": [], "stateMutability": "payable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "purchaseWithToken", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "purchasedAmounts", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "soldMovo", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalMovoForSale", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "newPrice", "type": "uint256" }], "name": "updateMovoPrice", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "newSupply", "type": "uint256" }], "name": "updateTotalSupply", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "vestingStart", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "to", "type": "address" }], "name": "withdrawFunds", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "to", "type": "address" }, { "internalType": "address", "name": "token", "type": "address" }], "name": "withdrawTokens", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "stateMutability": "payable", "type": "receive" }];
+
+        let provider;
+        let signer;
+        let contract;
+
+        const web3Modal = new Web3Modal.default({
+            cacheProvider: false,
+            providerOptions: {
+                walletconnect: {
+                    package: WalletConnectProvider.default,
+                    options: {
+                        infuraId: "989a073eaac84955b2ec366d7755664e"
+                    }
+                }
+            }
+        });
+
+        function showNotification(message, type = "info") {
+            const notification = document.getElementById("notification");
+            const notificationMessage = document.getElementById("notificationMessage");
+            notificationMessage.innerText = message;
+
+            if (type === "error") {
+                notification.className = "fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-600 text-white";
+            } else if (type === "success") {
+                notification.className = "fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-green-600 text-white";
+            } else {
+                notification.className = "fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-blue-600 text-white";
+            }
+
+            notification.classList.remove("hidden");
+            setTimeout(() => notification.classList.add("hidden"), 3000);
+        }
+
+        function saveWalletAddress(address) {
+            localStorage.setItem("walletAddress", address);
+        }
+
+        function getWalletAddress() {
+            return localStorage.getItem("walletAddress");
+        }
+
+        function clearWalletAddress() {
+            localStorage.removeItem("walletAddress");
+        }
+
+        async function checkLoginStatus() {
+            const savedWalletAddress = getWalletAddress();
+
+            if (savedWalletAddress) {
+                document.getElementById("walletAddress").innerText = `Địa chỉ ví: ${savedWalletAddress}`;
+                showNotification("Login successful!", "success");
+            }
+        }
+
+        async function connectWallet() {
+    try {
+    
+        const instance = await web3Modal.connect();
+        provider = new ethers.providers.Web3Provider(instance);
+        signer = provider.getSigner();
+
+        const network = await provider.getNetwork();
+        const BSC_CHAIN_ID = 56; 
+
+        if (network.chainId !== BSC_CHAIN_ID) {
+            try {
+                await provider.send("wallet_switchEthereumChain", [{ chainId: ethers.utils.hexlify(BSC_CHAIN_ID) }]);
+                showNotification("Switched to Binance Smart Chain!", "success");
+            } catch (switchError) {
+                if (switchError.code === 4902) {
+                    try {
+                        await provider.send("wallet_addEthereumChain", [
+                            {
+                                chainId: ethers.utils.hexlify(BSC_CHAIN_ID),
+                                chainName: "Binance Smart Chain",
+                                nativeCurrency: {
+                                    name: "BNB",
+                                    symbol: "BNB",
+                                    decimals: 18,
+                                },
+                                rpcUrls: ["https://bsc-dataseed.binance.org/"],
+                                blockExplorerUrls: ["https://bscscan.com"],
+                            },
+                        ]);
+                        showNotification("Binance Smart Chain added to MetaMask!", "success");
+                    } catch (addError) {
+                        console.error("Error adding BSC to MetaMask:", addError);
+                        showNotification("Failed to add Binance Smart Chain to MetaMask!", "error");
+                        return;
+                    }
+                } else {
+                    console.error("Error switching to Binance Smart Chain:", switchError);
+                    showNotification("Please switch to Binance Smart Chain in MetaMask!", "error");
+                    return;
+                }
+            }
+        }
+
+        const walletAddress = await signer.getAddress();
+        document.getElementById("walletAddress").innerText = `Wallet Address: ${walletAddress}`;
+        saveWalletAddress(walletAddress);
+
+        contract = new ethers.Contract(contractAddress, abi, signer);
+
+
+        const connectButton = document.getElementById("connectWallet");
+        connectButton.innerText = "Disconnect Wallet";
+        connectButton.onclick = disconnectWallet;
+
+        showNotification("Wallet connected successfully!", "success");
+
+
+        fetchVestingDetails();
+    } catch (error) {
+        console.error("Wallet Connection Error:", error);
+        showNotification("Wallet connection failed. Please try again!", "error");
+    }
+}
+
+        function disconnectWallet() {
+            web3Modal.clearCachedProvider();
+            provider = null;
+            signer = null;
+            contract = null;
+
+            document.getElementById("walletAddress").innerText = "Wallet Address: Not Connected";
+            const connectButton = document.getElementById("connectWallet");
+            connectButton.innerText = "Connect Wallet";
+            connectButton.onclick = connectWallet;
+
+            showNotification("Wallet Disconnected!", "success");
+        }
+
+        document.getElementById("bnbAmount").addEventListener("change", (event) => {
+            const customContainer = document.getElementById("customBnbContainer");
+            if (event.target.value === "custom") {
+                customContainer.classList.remove("hidden");
+            } else {
+                customContainer.classList.add("hidden");
+            }
+        });
+
+        async function purchaseMovo() {
+            const bnbAmount = document.getElementById("bnbAmount")?.value;
+
+            if (!bnbAmount || bnbAmount <= 0) {
+                showNotification("Please select or enter a valid BNB amount!", "error");
+                return;
+            }
+
+            try {
+                console.log("Checking contract:", contract); // Debug contract
+
+                if (!contract || !window.walletConnected) {
+                    console.log("Wallet is not connected or contract is not initialized.");
+                    showNotification("Wallet is not connected. Displaying the wallet connection modal...", "info");
+
+                    const connected = await connectWallet();
+                    if (!connected || !contract) {
+                        showNotification("Unable to connect wallet. Please try again!", "error");
+                        return;
+                    }
+                }
+
+
+                console.log("Contract has been initialized:", contract);
+
+
+                let bnbValue;
+                try {
+                    bnbValue = ethers.utils.parseEther(bnbAmount);
+                } catch (error) {
+                    showNotification("Invalid BNB amount. Please enter the correct format!", "error");
+                    return;
+                }
+
+                console.log("Sending transaction with BNB amount:", bnbValue.toString());
+
+
+                const tx = await contract.purchaseWithBNB({
+                    value: bnbValue,
+                    gasLimit: ethers.utils.hexlify(300000),
+                });
+
+
+                showNotification("Processing transaction...", "info");
+                await tx.wait();
+
+                // Display notification when the transaction is successful
+                showNotification("Successfully purchased MOVO!", "success");
+                console.log(`Transaction successful! Tx Hash: ${tx.hash}`);
+
+                // Call function to fetch vesting details
+                fetchVestingDetails();
+
+            } catch (error) {
+                console.error("Error purchasing MOVO:", error);
+
+
+                // Display detailed error notifications
+                if (error.code === "UNPREDICTABLE_GAS_LIMIT") {
+                    showNotification("Unable to estimate gas. The transaction might fail!", "error");
+                } else if (error.code === "INSUFFICIENT_FUNDS") {
+                    showNotification("Insufficient BNB to complete the transaction!", "error");
+                } else {
+                    showNotification("Transaction failed! Please try again.", "error");
+                }
+
+            }
+        }
+
+        function logout() {
+            clearWalletAddress();
+            document.getElementById("walletAddress").innerText = "Wallet Address: Not Connected";
+            showNotification("Logged out successfully!", "success");
+        }
+
+
+        document.getElementById("connectWallet").addEventListener("click", connectWallet);
+
+
+        async function purchaseMovo() {
+            let bnbAmount = document.getElementById("bnbAmount").value;
+
+            if (bnbAmount === "custom") {
+                bnbAmount = document.getElementById("customBnbAmount").value;
+            }
+
+            if (!bnbAmount || bnbAmount <= 0) {
+                showNotification("Please select or enter a valid BNB amount!", "error");
+                return;
+            }
+
+
+            try {
+                if (!contract) {
+                    showNotification("Please connect your wallet!", "error");
+                    return;
+                }
+
+                const bnbValue = ethers.utils.parseEther(bnbAmount);
+
+                const tx = await contract.purchaseWithBNB({
+                    value: bnbValue,
+                    gasLimit: ethers.utils.hexlify(300000)
+                });
+
+                showNotification("Processing transaction...", "info");
+                await tx.wait();
+                showNotification("Successfully purchased MOVO!", "success");
+                console.log(`Transaction successful! Tx Hash: ${tx.hash}`);
+
+                // Fetch vesting details from the contract
+                const walletAddress = await signer.getAddress();
+                const vestingInfo = await contract.getUserTokenInfo(walletAddress);
+
+                // Update the information on the interface
+                document.getElementById("totalPurchased").innerText = `${vestingInfo.totalPurchased} MOVO`;
+                document.getElementById("alreadyClaimed").innerText = `${vestingInfo.alreadyClaimed} MOVO`;
+                document.getElementById("remaining").innerText = `${vestingInfo.remaining} MOVO`;
+                const nextClaimDate = new Date(vestingInfo.nextClaimTime * 1000).toLocaleString();
+                document.getElementById("nextClaimTime").innerText = nextClaimDate;
+
+                // Display the vesting information section
+                document.getElementById("vestingInfo").classList.remove("hidden");
+            } catch (error) {
+                console.error("Error purchasing MOVO:", error);
+                // showNotification("Transaction failed!", "error");
+            }
+
+        }
+
+        async function checkLoginStatus() {
+            try {
+                if (!contract) {
+                    console.error("Contract is not initialized. Please connect your wallet!");
+                    return;
+                }
+
+                const walletAddress = await signer.getAddress();
+                console.log(`Checking Presale history for wallet: ${walletAddress}`);
+
+                // Check if the function exists
+                if (typeof contract.getUserTokenInfo !== "function") {
+                    console.error("The `getUserTokenInfo` function does not exist in the ABI.");
+                    return;
+                }
+
+                const vestingInfo = await contract.getUserTokenInfo(walletAddress);
+
+                if (vestingInfo.totalPurchased > 0) {
+                    console.log("Vesting information:", vestingInfo);
+                    // Display information on the interface if data exists
+                } else {
+                    console.log("This wallet has not participated in the Presale.");
+                }
+            } catch (error) {
+                console.error("Error checking Presale history:", error);
+            }
+        }
+
+        async function fetchVestingDetails() {
+            try {
+                if (!contract) {
+                    showNotification("Contract is not initialized. Please connect your wallet!", "error");
+                    return;
+                }
+
+                const walletAddress = await signer.getAddress();
+                console.log(`Fetching vesting details for wallet: ${walletAddress}`);
+
+                const vestingInfo = await contract.getUserTokenInfo(walletAddress);
+                const totalPurchased = ethers.utils.formatUnits(vestingInfo.totalPurchased, 18);
+                const claimed = ethers.utils.formatUnits(vestingInfo.alreadyClaimed, 18);
+                const remaining = ethers.utils.formatUnits(vestingInfo.remaining, 18);
+                const nextClaimTime = vestingInfo.nextClaimTime.toNumber();
+                const tgeMovo = totalPurchased * 0.2;
+                const vestingMovo = totalPurchased * 0.8;
+
+                if (nextClaimTime <= 0) {
+                    showNotification("Vesting has not started or information is invalid!", "info");
+                    console.error("Invalid vesting start value:", nextClaimTime);
+                    return;
+                }
+
+                const vestingStartDate = new Date(nextClaimTime * 1000).toISOString();
+                const scheduleList = document.getElementById("vestingSchedule");
+
+                // Safely update DOM elements
+                const updateElement = (id, value) => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.innerText = value;
+                    } else {
+                        console.error(`Element with ID '${id}' not found.`);
+                    }
+                };
+
+                updateElement("vestingWalletAddress", walletAddress);
+                updateElement("totalPurchased", `${totalPurchased} MOVO`);
+                updateElement("alreadyClaimed", `${claimed} MOVO`);
+                updateElement("tgeMovo", `${tgeMovo.toFixed(8)} MOVO`);
+                updateElement("vestingMovo", `${vestingMovo.toFixed(8)} MOVO`);
+                updateElement("remaining", `${remaining} MOVO`);
+                updateElement("vestingStartDate", vestingStartDate);
+
+                if (scheduleList) {
+                    scheduleList.innerHTML = ""; // Clear existing entries
+                    for (let i = 1; i <= 6; i++) {
+                        const releaseDate = new Date(nextClaimTime * 1000 + i * 30 * 24 * 60 * 60 * 1000).toISOString();
+                        const listItem = document.createElement("li");
+                        listItem.innerText = `Cycle ${i}: ${(vestingMovo / 6).toFixed(8)} MOVO - Release Date: ${releaseDate}`;
+                        scheduleList.appendChild(listItem);
+                    }
+                } else {
+                    console.error("Element with ID 'vestingSchedule' not found.");
+                }
+
+                document.getElementById("vestingInfo").classList.remove("hidden");
+            } catch (error) {
+                console.error("Error fetching vesting details:", error);
+            }
+        }
+
+        async function claimTokens() {
+    try {
+        // Fetch vesting info to determine eligibility
+        const walletAddress = await signer.getAddress();
+        const vestingInfo = await contract.getUserTokenInfo(walletAddress);
+        const nextClaimTime = vestingInfo.nextClaimTime.toNumber();
+        const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+
+        // Check if claim is available
+        if (currentTime < nextClaimTime) {
+            const nextClaimDate = new Date(nextClaimTime * 1000).toISOString();
+            console.log(`No MOVO to claim. Next vesting date: ${nextClaimDate}`);
+            showNotification(`Claim is not yet available. Next vesting date: ${nextClaimDate} (UTC +0)`, "info");
+            return; // Exit the function to avoid triggering MetaMask
+        }
+
+        // Proceed with claim if eligible
+        const tx = await contract.claim({
+            gasLimit: ethers.utils.hexlify(300000),
+        });
+        await tx.wait();
+        showNotification("Claim successful!", "success");
+        fetchVestingDetails(); // Refresh details
+    } catch (error) {
+        console.error("Error during claim:", error);
+        showNotification("Claim failed! Please try again.", "error");
+    }
+}
+
+        window.onload = checkLoginStatus;
+    </script><div id="WEB3_CONNECT_MODAL_ID"><div class="sc-jSFkmK kRmdPb web3modal-modal-lightbox" offset="0" opacity="0.4"><div class="sc-gKAblj fVQpCb web3modal-modal-container"><div class="sc-iCoHVE knnrxv web3modal-modal-hitbox"></div><div class="sc-fujyUd hdPMvV web3modal-modal-card"><div class="sc-eCApGN cjAFRf web3modal-provider-wrapper"><div class="sc-hKFyIo jcNZzC web3modal-provider-container"><div class="sc-bdnylx jMhaxE web3modal-provider-icon"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyYWRpYWxHcmFkaWVudCBpZD0iYSIgY3g9IjAlIiBjeT0iNTAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1ZDlkZjYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDZmZmYiLz48L3JhZGlhbEdyYWRpZW50PjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0ibTI1NiAwYzE0MS4zODQ4OTYgMCAyNTYgMTE0LjYxNTEwNCAyNTYgMjU2cy0xMTQuNjE1MTA0IDI1Ni0yNTYgMjU2LTI1Ni0xMTQuNjE1MTA0LTI1Ni0yNTYgMTE0LjYxNTEwNC0yNTYgMjU2LTI1NnoiIGZpbGw9InVybCgjYSkiLz48cGF0aCBkPSJtNjQuNjkxNzU1OCAzNy43MDg4Mjk4YzUxLjUzMjgwNzItNTAuMjc4NDM5NyAxMzUuMDgzOTk0Mi01MC4yNzg0Mzk3IDE4Ni42MTY3OTkyIDBsNi4yMDIwNTcgNi4wNTEwOTA2YzIuNTc2NjQgMi41MTM5MjE4IDIuNTc2NjQgNi41ODk3OTQ4IDAgOS4xMDM3MTc3bC0yMS4yMTU5OTggMjAuNjk5NTc1OWMtMS4yODgzMjEgMS4yNTY5NjE5LTMuMzc3MSAxLjI1Njk2MTktNC42NjU0MjEgMGwtOC41MzQ3NjYtOC4zMjcwMjA1Yy0zNS45NTA1NzMtMzUuMDc1NDk2Mi05NC4yMzc5NjktMzUuMDc1NDk2Mi0xMzAuMTg4NTQ0IDBsLTkuMTQwMDI4MiA4LjkxNzU1MTljLTEuMjg4MzIxNyAxLjI1Njk2MDktMy4zNzcxMDE2IDEuMjU2OTYwOS00LjY2NTQyMDggMGwtMjEuMjE1OTk3My0yMC42OTk1NzU5Yy0yLjU3NjY0MDMtMi41MTM5MjI5LTIuNTc2NjQwMy02LjU4OTc5NTggMC05LjEwMzcxNzd6bTIzMC40OTM0ODUyIDQyLjgwODkxMTcgMTguODgyMjc5IDE4LjQyMjcyNjJjMi41NzY2MjcgMi41MTM5MTAzIDIuNTc2NjQyIDYuNTg5NzU5My4wMDAwMzIgOS4xMDM2ODYzbC04NS4xNDE0OTggODMuMDcwMzU4Yy0yLjU3NjYyMyAyLjUxMzk0MS02Ljc1NDE4MiAyLjUxMzk2OS05LjMzMDg0LjAwMDA2Ni0uMDAwMDEtLjAwMDAxLS4wMDAwMjMtLjAwMDAyMy0uMDAwMDMzLS4wMDAwMzRsLTYwLjQyODI1Ni01OC45NTc0NTFjLS42NDQxNi0uNjI4NDgxLTEuNjg4NTUtLjYyODQ4MS0yLjMzMjcxIDAtLjAwMDAwNC4wMDAwMDQtLjAwMDAwOC4wMDAwMDctLjAwMDAxMi4wMDAwMTFsLTYwLjQyNjk2ODMgNTguOTU3NDA4Yy0yLjU3NjYxNDEgMi41MTM5NDctNi43NTQxNzQ2IDIuNTEzOTktOS4zMzA4NDA4LjAwMDA5Mi0uMDAwMDE1MS0uMDAwMDE0LS4wMDAwMzA5LS4wMDAwMjktLjAwMDA0NjctLjAwMDA0NmwtODUuMTQzODY3NzQtODMuMDcxNDYzYy0yLjU3NjYzOTI4LTIuNTEzOTIxLTIuNTc2NjM5MjgtNi41ODk3OTUgMC05LjEwMzcxNjNsMTguODgyMzEyNjQtMTguNDIyNjk1NWMyLjU3NjYzOTMtMi41MTM5MjIyIDYuNzU0MTk5My0yLjUxMzkyMjIgOS4zMzA4Mzk3IDBsNjAuNDI5MTM0NyA1OC45NTgyNzU4Yy42NDQxNjA4LjYyODQ4IDEuNjg4NTQ5NS42Mjg0OCAyLjMzMjcxMDMgMCAuMDAwMDA5NS0uMDAwMDA5LjAwMDAxODItLjAwMDAxOC4wMDAwMjc3LS4wMDAwMjVsNjAuNDI2MTA2NS01OC45NTgyNTA4YzIuNTc2NTgxLTIuNTEzOTggNi43NTQxNDItMi41MTQwNzQzIDkuMzMwODQtLjAwMDIxMDMuMDAwMDM3LjAwMDAzNTQuMDAwMDcyLjAwMDA3MDkuMDAwMTA3LjAwMDEwNjNsNjAuNDI5MDU2IDU4Ljk1ODM1NDhjLjY0NDE1OS42Mjg0NzkgMS42ODg1NDkuNjI4NDc5IDIuMzMyNzA5IDBsNjAuNDI4MDc5LTU4Ljk1NzE5MjVjMi41NzY2NC0yLjUxMzkyMzEgNi43NTQxOTktMi41MTM5MjMxIDkuMzMwODM5IDB6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4IDE2MCkiLz48L2c+PC9zdmc+" alt="WalletConnect"></div><div class="sc-gtssRu bktcUM web3modal-provider-name">WalletConnect</div><div class="sc-dlnjPT eFHlqH web3modal-provider-description">Scan with WalletConnect to connect</div></div></div></div></div></div></div>
+    
+
+
+</body></html>
